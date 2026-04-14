@@ -112,6 +112,8 @@ The Data:
 raw_data = [150.0, "ERROR_404", -20.50, 300, "MISSING_DATA", -100, 50.75]
 
 #### My code 
+
+```python
 raw_data=[150.0, "ERROR_404", -20.50, 300, "MISSING_DATA", -100, 50.75]
 Final_balance=0
 for i in raw_data:
@@ -125,24 +127,25 @@ for i in raw_data:
         print("Withdrawal :"+str(i))
     Final_balance+=i
 print(Final_balance)
-
+```
 ### Exercise 2:The Daily Withdrawal Limit (Loop Control)
 
 Banks often have a security limit. If a customer tries to withdraw too much in one day, the system must stop them.
 
 The Goal:
 
-    Set a DAILY_LIMIT = 500.
+  Set a DAILY_LIMIT = 500.
 
-    Loop through a list of withdrawal attempts: attempts = [100, 250, 50, 300, 40].
+Loop through a list of withdrawal attempts: attempts = [100, 250, 50, 300, 40].
 
-    Keep a "Running Total" of how much they have withdrawn so far.
+Keep a "Running Total" of how much they have withdrawn so far.
 
-    Before each withdrawal, check: If this next withdrawal will put them over the 500 limit, print a warning and use break to stop processing any more attempts.
+Before each withdrawal, check: If this next withdrawal will put them over the 500 limit, print a warning and use break to stop processing any more attempts.
 
-    If it's safe, add it to the total and print "Transaction Approved. New Total: [X]".
+If it's safe, add it to the total and print "Transaction Approved. New Total: [X]".
     
-#### My code 
+#### My code
+```python
 daily_limit=500
 attempts = [100, 250, 50, 300, 40]
 running_total=0
@@ -153,24 +156,25 @@ for i in attempts :
         break
     running_total+=i
     print('Transaction approved for :'+str(i)+ 'and the new running total is :'+str(running_total) )
-
+```
 ### Exercise 3: The Account "Masker" (String Logic)
 
 For privacy (GDPR), banks often hide part of an account number, like: ****-****-1234.
 
 The Goal:
 
-    Create a variable account_number = "5432-8765-1234-9988".
+Create a variable account_number = "5432-8765-1234-9988".
 
-    Use a for loop to look at every character in the string.
+Use a for loop to look at every character in the string.
 
-    If the character is a digit AND it is not one of the last 4 digits, print a *.
+ If the character is a digit AND it is not one of the last 4 digits, print a *.
 
-    If it is a dash - or one of the last 4 digits, print the actual character.
+ If it is a dash - or one of the last 4 digits, print the actual character.
 
-        Hint: To check for the last 4 digits, you could use a counter variable that increments in the loop.
+Hint: To check for the last 4 digits, you could use a counter variable that increments in the loop.
 
 #### My code 
+```python
 account_number = "5432-8765-1234-9988"
 len_account_number=0
 for i in account_number:
@@ -187,26 +191,20 @@ for i in account_number:
     else:
         print(i, end="")
 print("")
-
+```
 - **Note Well**: to obligate python to stay in the same line , we use the function **end=''**
 
 ### Exercise 4: Interest Calculator (Math + Formatting)
 
 Write a program that calculates how a savings account grows over 12 months.
 
-The Goal:
-
-    Start with balance = 1000.
-
-    Set a monthly_interest_rate = 0.005 (0.5%).
-
-    Use for i in range(1, 13): to represent 12 months.
-
-    In each loop, add the interest to the balance (balance += balance * monthly_interest_rate).
-
-    Print the balance for each month formatted to 2 decimal places (like you saw in the book!)
+The Goal: Start with balance = 1000.et a monthly_interest_rate = 0.005 (0.5%).
+Use for i in range(1, 13): to represent 12 months.
+In each loop, add the interest to the balance (balance += balance * monthly_interest_rate).
+Print the balance for each month formatted to 2 decimal places (like you saw in the book!)
     
 #### My code
+```python
 balance=1000
 months=["January","February", "March", "April", "May", "June","July","August","September","October","November","December"]
 monthly_interest_rate=0.005
@@ -214,7 +212,6 @@ for i in range(1, 13):
     balance+= balance*0.005
     print(f'for the month:{months[i-1]} the balance is : {'%.2f'%balance}')
 print(f'the total balance for this year is : {'%.2f'%balance}')
-
-
+```
 ### Exercise for this day
 for this day the exercise is to make a program which ask for user's information(name, age) and tell if he is major or minor using what we saw untill now. And to see what i've done please check the **learning/elvira/Sprint1_Day1.py** file .
